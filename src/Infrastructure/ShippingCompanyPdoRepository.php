@@ -14,26 +14,6 @@ class ShippingCompanyPdoRepository implements ShippingCompanyRepository
     public function __construct(DBConnection $connection)
     {
         $this->connection = $connection;
-        $this->createTables();
-    }
-
-    private function createTables()
-    {
-        $this->connection->query('CREATE TABLE IF NOT EXISTS shipping_companies (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            country TEXT NOT NULL
-        )');
-
-        $this->connection->query("CREATE TABLE IF NOT EXISTS shipping_company_zipcode_ranges (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            shipping_company_id INTEGER NOT NULL,
-            min_zipcode TEXT NOT NULL,
-            max_zipcode TEXT NOT NULL,
-            delivery_time INTEGER NOT NULL,
-            price FLOAT NOT NULL,
-            FOREIGN KEY (shipping_company_id) REFERENCES shipping_companies (id)
-        )");
     }
 
     public function getAllShippingCompanies(): array
