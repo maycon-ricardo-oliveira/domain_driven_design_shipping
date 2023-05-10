@@ -1,0 +1,4 @@
+/vendor
+/.idea/inspectionProfiles/Project_Default.xml
+/.phpunit.result.cache
+/composer.lock

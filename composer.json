@@ -1,0 +1,25 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Domain\\": "src/Domain",
+      "Infrastructure\\": "src/Infrastructure",
+      "Application\\": "src/Application",
+      "Adapters\\": "src/Adapters"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.1"
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "require": {
+    "ext-pdo": "*",
+    "php": "^7.4"
+  }
+}
